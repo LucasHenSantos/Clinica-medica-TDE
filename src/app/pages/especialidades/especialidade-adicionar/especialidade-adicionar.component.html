@@ -1,0 +1,27 @@
+<div class="container" style="margin-top:40px;">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <form #especialidadeForm="ngForm" (ngSubmit)="onSubmit(especialidadeForm)" novalidate>
+        <div class="form-group" style="margin-bottom: 25px;">
+          <label for="nome">Nome da Especialidade</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            name="nome"
+            required
+            [(ngModel)]="especialidade.nome"
+            #nomeCtrl="ngModel"
+            placeholder="Digite o nome da especialidade"
+          />
+          <div *ngIf="nomeCtrl.invalid && nomeCtrl.touched" class="text-danger" style="margin-top: 5px;">
+            O nome é obrigatório.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

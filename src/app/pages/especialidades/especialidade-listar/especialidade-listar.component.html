@@ -1,0 +1,35 @@
+<div class="container">
+<form class="form-inline" (ngSubmit)="onSearch()">
+    <div class="form-group">
+        <label for="searchId">Pesquisar por ID:</label>
+        <input type="text" class="form-control" id="searchId" placeholder="ID" [(ngModel)]="searchId" name="searchId">
+    </div>
+    <button type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+</form>
+
+<table class="table table-bordered table-striped" *ngIf="especialidade">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ especialidade.id }}</td>
+            <td>{{ especialidade.nome }}</td>
+            <td>
+                <button class="btn btn-primary btn-xs" (click)="onEdit(especialidade)">
+                    <span class="glyphicon glyphicon-pencil"></span> Editar
+                </button>
+                <button class="btn btn-danger btn-xs" (click)="onDelete()">
+                    <span class="glyphicon glyphicon-trash"></span> Excluir
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

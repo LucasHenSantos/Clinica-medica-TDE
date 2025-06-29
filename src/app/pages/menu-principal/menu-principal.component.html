@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Clínica Médica</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- ...existing code... -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="medicosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Médicos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="medicosDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/medicos/listar">Listagem</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/medicos/adicionar">Adicionar Novo</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="especialidadesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Especialidades
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="especialidadesDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/especialidades/listar">Listagem</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/especialidades/adicionar">Adicionar Novo</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- ...existing code... -->
+      <button class="btn btn-outline-light" (click)="sair()">Sair</button>
+    </div>
+  </div>
+</nav>

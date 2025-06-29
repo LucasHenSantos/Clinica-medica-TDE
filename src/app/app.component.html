@@ -1,0 +1,4 @@
+<app-cabecalho *ngIf="router.url == '/login'"></app-cabecalho>
+<app-menu-principal *ngIf="router.url != '/login'"></app-menu-principal>
+<router-outlet></router-outlet>
+<app-rodape></app-rodape>
