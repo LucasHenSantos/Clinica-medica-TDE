@@ -8,6 +8,7 @@ import { EspecialidadeAdicionarComponent } from './pages/especialidades/especial
 import { ConvenioAdicionarComponent } from './pages/convenios/convenio-adicionar/convenio-adicionar.component';
 import { ConvenioListarComponent } from './pages/convenios/convenio-listar/convenio-listar.component';
 import { EspecialidadeListarComponent } from './pages/especialidades/especialidade-listar/especialidade-listar.component';
+import { MedicoAdicionarComponent } from './pages/medicos/medico-adicionar/medico-adicionar.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'menu-principal', component: MenuPrincipalComponent },
   { path: 'especialidades/adicionar', component: EspecialidadeAdicionarComponent },
   { path: 'especialidades/listar', component: EspecialidadeListarComponent },
+  { path: 'medicos/adicionar', component: MedicoAdicionarComponent }, 
   { path: 'boas-vinda', component: BoasVindaComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

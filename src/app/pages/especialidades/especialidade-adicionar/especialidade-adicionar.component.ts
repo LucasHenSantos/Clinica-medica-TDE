@@ -10,27 +10,34 @@ import { EspecialidadeService } from 'src/app/services/especialidade.service';
 })
 export class EspecialidadeAdicionarComponent {
 
-  especialidade:Especialidade = {nome: '', id :'', binId: ''};
+  // Inicialize especialidade sem o binId, pois não é mais usado no modelo
+  especialidade: Especialidade = { nome: '', id :'' }; // Remova 'binId' daqui
   
+  constructor(private especialidadeService: EspecialidadeService) {}
+
   onSubmit(form: NgForm): void {
     if (this.especialidade.nome) {
-      this.especialidade.id = crypto.randomUUID();
+      // O ID será gerado dentro do service, se necessário
+      // O service agora cuida de buscar a lista, adicionar/atualizar e salvar de volta
       this.especialidadeService.save(this.especialidade).subscribe({
         next: (response) => {
           console.log(response);
-          alert('Especialidade cadastrada com sucesso! Id:'+ response.body.metadata.id );
+          // A resposta do PUT do JSONBin.io terá metadados do bin, não do item individual
+          alert('Especialidade cadastrada/atualizada com sucesso!'); // Mensagem mais genérica
           form.resetForm();
+          this.limparCampos(); // Limpa o objeto especialidade para um novo cadastro
         },
-        error: () => alert('Erro ao cadastrar especialidade.')
+        error: (error) => {
+          console.error('Erro ao cadastrar especialidade:', error);
+          alert('Erro ao cadastrar especialidade.');
+        }
       });
     }else{
       alert('Por favor, preencha o nome da especialidade.');
     }
   }
 
-  constructor(private especialidadeService: EspecialidadeService) {}
-
   limparCampos() {
-    this.especialidade = { nome: '', id: '', binId: '' };
+    this.especialidade = { nome: '', id: '' }; // Remova 'binId' daqui também
   }
 }
