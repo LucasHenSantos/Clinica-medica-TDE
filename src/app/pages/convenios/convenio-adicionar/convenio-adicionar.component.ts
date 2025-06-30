@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class ConvenioAdicionarComponent {
 
+  convenio = {
+    nome: '',
+    cnpj: ''
+  };
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      console.log('Convênio cadastrado:', this.convenio);
+      alert('Convênio cadastrado com sucesso!');
+      form.resetForm();
+    }
+  }
 }
