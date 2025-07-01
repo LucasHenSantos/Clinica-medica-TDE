@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Especialidade } from 'src/app/models/especialidade.model';
 import { EspecialidadeService } from 'src/app/services/especialidade.service';
 
@@ -7,58 +7,66 @@ import { EspecialidadeService } from 'src/app/services/especialidade.service';
   templateUrl: './especialidade-listar.component.html',
   styleUrls: ['./especialidade-listar.component.css']
 })
-export class EspecialidadeListarComponent {
-  
-especialidade: Especialidade | undefined;
-searchId: string = '';
+export class EspecialidadeListarComponent implements OnInit {
 
-constructor(private especialidadeService: EspecialidadeService) {}
+  especialidades: Especialidade[] = [];
+  todasEspecialidades: Especialidade[] = []; // Armazena a lista completa para filtros
+  searchId: string = ''; // Para o campo de busca
 
-onEdit(_t25: any) {
-throw new Error('Method not implemented.');
-}
+  constructor(private especialidadeService: EspecialidadeService) { }
 
-onDelete() {
-  if (this.especialidade) {
-    this.especialidadeService.delete(this.especialidade.binId).subscribe({
-      next: () => {
-        alert('Especialidade excluída com sucesso.');
-        this.especialidade = undefined;
+  ngOnInit(): void {
+    this.carregarEspecialidades();
+  }
+
+  carregarEspecialidades(): void {
+    this.especialidadeService.getAll().subscribe({
+      next: (data: Especialidade[]) => { // Tipagem explícita para 'data'
+        this.todasEspecialidades = data;
+        this.especialidades = data; // Inicialmente, exibe todas as especialidades
+        console.log('Especialidades carregadas para a lista:', this.especialidades);
       },
-      error: (error) => {
-        alert('Erro ao excluir especialidade:');
+      error: (error: any) => { // Tipagem explícita para 'error'
+        console.error('Erro ao carregar especialidades:', error);
+        alert('Erro ao carregar especialidades.');
       }
     });
   }
-}
 
-onSearch() {
-  if (this.searchId) {
-    // Aqui você pode chamar o serviço para buscar a especialidade pelo ID
-    console.log(`Buscando especialidade com ID: ${this.searchId}`);
-    this.especialidadeService.getById(this.searchId).subscribe({
-      next: (response) => {
-        if(!response.body || !response.body.record) {
-          console.error('Especialidade não encontrada.');
-          alert('Especialidade não encontrada.');
-          return;
+  deleteEspecialidade(id: string): void { // Recebe o ID da especialidade
+    if (confirm('Tem certeza que deseja excluir esta especialidade?')) {
+      this.especialidadeService.delete(id).subscribe({
+        next: (response: any) => {
+          console.log(response);
+          alert('Especialidade excluída com sucesso!');
+          this.carregarEspecialidades(); // Recarrega a lista após a exclusão
+        },
+        error: (error: any) => {
+          console.error('Erro ao excluir especialidade:', error);
+          alert('Erro ao excluir especialidade.');
         }
-
-        this.especialidade = {
-          binId: response.body.metadata.id,
-          id: response.body.record.id,
-          nome: response.body.record.nome,
-        };
-        console.log('Especialidade encontrada:', this.especialidade);
-      },
-      error: (error) => {
-        console.error('Erro ao buscar especialidade:', error);
-        alert('Especialidade não encontrada.');
-      }
-    });
-  } else {
-        alert('Informe o ID da especialidade para buscar.');
+      });
+    }
   }
-}
 
+  // Método para buscar especialidade (agora filtra na lista já carregada)
+  buscarEspecialidade(): void {
+    if (this.searchId) {
+      // Filtra na lista completa de especialidades carregadas
+      this.especialidades = this.todasEspecialidades.filter(
+        esp => esp.id.includes(this.searchId) || esp.nome.toLowerCase().includes(this.searchId.toLowerCase())
+      );
+      if (this.especialidades.length === 0) {
+        alert('Nenhuma especialidade encontrada com o ID ou nome informado.');
+      }
+    } else {
+      // Se o campo de busca estiver vazio, exibe todas novamente
+      this.especialidades = this.todasEspecialidades;
+    }
+  }
+
+  limparBusca(): void {
+    this.searchId = '';
+    this.especialidades = this.todasEspecialidades; // Exibe todas as especialidades novamente
+  }
 }
