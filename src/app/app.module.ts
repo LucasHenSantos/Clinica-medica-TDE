@@ -18,8 +18,12 @@ import { PacienteAdicionarComponent } from './pages/paciente/paciente-adicionar/
 import { PacienteListarComponent } from './pages/paciente/paciente-listar/paciente-listar.component';
 import { ConvenioAdicionarComponent } from './pages/convenios/convenio-adicionar/convenio-adicionar.component';
 import { ConvenioListarComponent } from './pages/convenios/convenio-listar/convenio-listar.component';
+<<<<<<< HEAD
+import { PerfilComponent } from './pages/perfil/perfil.component';
+=======
 import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.component';
 
+>>>>>>> master
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.co
     PacienteListarComponent,
     ConvenioAdicionarComponent,
     ConvenioListarComponent,
+<<<<<<< HEAD
+    PerfilComponent,
+=======
     MenuPrincipalComponent
+>>>>>>> master
   ],
   imports: [
     BrowserModule,
