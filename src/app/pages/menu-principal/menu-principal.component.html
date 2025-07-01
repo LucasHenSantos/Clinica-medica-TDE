@@ -6,18 +6,17 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- ...existing code... -->
       <ul class="navbar-nav me-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="medicosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Médicos
+          <a class="nav-link dropdown-toggle" href="#" id="funcionariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Funcionários
           </a>
-          <ul class="dropdown-menu" aria-labelledby="medicosDropdown">
+          <ul class="dropdown-menu" aria-labelledby="funcionariosDropdown">
             <li>
-              <a class="dropdown-item" routerLink="/medicos/listar">Listagem</a>
+              <a class="dropdown-item" routerLink="/funcionario-listar">Listagem</a>
             </li>
             <li>
-              <a class="dropdown-item" routerLink="/medicos/adicionar">Adicionar Novo</a>
+              <a class="dropdown-item" routerLink="/funcionario-adicionar">Adicionar Novo</a>
             </li>
           </ul>
         </li>
@@ -27,15 +26,20 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="especialidadesDropdown">
             <li>
-              <a class="dropdown-item" routerLink="/especialidades/listar">Listagem</a>
+              <a class="dropdown-item" routerLink="/especialidade-listar">Listagem</a>
             </li>
             <li>
-              <a class="dropdown-item" routerLink="/especialidades/adicionar">Adicionar Novo</a>
+              <a class="dropdown-item" routerLink="/especialidade-adicionar">Adicionar Novo</a>
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/convenios/listar">Convênios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/convenios/adicionar">Adicionar Convênio</a>
+        </li>
       </ul>
-      <!-- ...existing code... -->
       <button class="btn btn-outline-light" (click)="sair()">Sair</button>
     </div>
   </div>
