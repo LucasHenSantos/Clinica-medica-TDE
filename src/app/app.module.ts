@@ -16,6 +16,9 @@ import { MedicoListarComponent } from './pages/medicos/medico-listar/medico-list
 import { MedicoAdicionarComponent } from './pages/medicos/medico-adicionar/medico-adicionar.component';
 import { ConvenioAdicionarComponent } from './pages/convenios/convenio-adicionar/convenio-adicionar.component';
 import { ConvenioListarComponent } from './pages/convenios/convenio-listar/convenio-listar.component';
+import { ProntuarioListaComponent } from './prontuario-lista/prontuario-lista.component';
+import { ProntuarioDetalhesComponent } from './prontuario-detalhes/prontuario-detalhes.component';
+import { ProntuarioFormComponent } from './prontuario-form/prontuario-form.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { ConvenioListarComponent } from './pages/convenios/convenio-listar/conve
     MedicoAdicionarComponent,
     ConvenioAdicionarComponent,
     ConvenioListarComponent,
+    ProntuarioListaComponent,
+    ProntuarioDetalhesComponent,
+    ProntuarioFormComponent,
   ],
   imports: [
     BrowserModule,
