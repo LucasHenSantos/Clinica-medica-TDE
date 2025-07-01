@@ -1,0 +1,116 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0"><i class="fas fa-file-medical-alt me-2"></i>Prontuário Eletrônico do Paciente</h2>
+    </div>
+    <div class="card-body">
+      <form>
+        <!-- Seção de Identificação do Paciente e Consulta -->
+        <div class="p-3 mb-4 bg-light rounded border">
+          <div class="row align-items-end">
+            <div class="col-md-6 mb-3">
+              <label for="pacienteNome" class="form-label"><strong>Paciente</strong></label>
+              <input type="text" id="pacienteNome" class="form-control" placeholder="Nome completo do paciente">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="pacienteNascimento" class="form-label"><strong>Nascimento</strong></label>
+              <input type="text" id="pacienteNascimento" class="form-control" placeholder="DD/MM/AAAA">
+            </div>
+             <div class="col-md-3 mb-3">
+              <label for="pacienteSexo" class="form-label"><strong>Sexo</strong></label>
+              <input type="text" id="pacienteSexo" class="form-control" placeholder="Masculino/Feminino">
+            </div>
+          </div>
+          <hr>
+          <div class="row align-items-end">
+            <div class="col-md-5 mb-3">
+              <label for="medico" class="form-label"><strong>Médico Responsável</strong></label>
+              <input type="text" id="medico" class="form-control" placeholder="Nome do médico responsável">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="especialidade" class="form-label"><strong>Especialidade</strong></label>
+              <input type="text" id="especialidade" class="form-control" placeholder="Especialidade da consulta">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="dataConsulta" class="form-label"><strong>Data da Consulta</strong></label>
+              <input type="text" id="dataConsulta" class="form-control" value="24/05/2024">
+            </div>
+          </div>
+        </div>
+
+        <!-- Anamnese -->
+        <h4>Anamnese</h4>
+        <hr>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <label for="queixaPrincipal" class="form-label fw-bold">Queixa Principal (QP)</label>
+            <textarea id="queixaPrincipal" class="form-control" rows="2" placeholder="Descreva a queixa principal do paciente..."></textarea>
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="historiaDoenca" class="form-label fw-bold">História da Doença Atual (HDA)</label>
+            <textarea id="historiaDoenca" class="form-control" rows="4" placeholder="Detalhe a história da doença atual, início, sintomas, etc..."></textarea>
+          </div>
+           <div class="col-md-12 mb-3">
+            <label for="antecedentes" class="form-label fw-bold">Antecedentes Pessoais, Familiares e Hábitos</label>
+            <textarea id="antecedentes" class="form-control" rows="3" placeholder="Comorbidades, cirurgias prévias, alergias, histórico familiar, tabagismo, etilismo..."></textarea>
+          </div>
+        </div>
+
+        <!-- Exame Físico -->
+        <h4 class="mt-3">Exame Físico</h4>
+        <hr>
+        <div class="row align-items-end">
+          <div class="col-md-3 mb-3">
+            <label for="pressaoArterial" class="form-label">Pressão Arterial (PA)</label>
+            <input type="text" id="pressaoArterial" class="form-control" placeholder="ex: 120/80 mmHg">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="frequenciaCardiaca" class="form-label">Frequência Cardíaca (FC)</label>
+            <input type="text" id="frequenciaCardiaca" class="form-control" placeholder="ex: 80 bpm">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="frequenciaRespiratoria" class="form-label">Frequência Respiratória (FR)</label>
+            <input type="text" id="frequenciaRespiratoria" class="form-control" placeholder="ex: 16 irpm">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="temperatura" class="form-label">Temperatura (T)</label>
+            <input type="text" id="temperatura" class="form-control" placeholder="ex: 36.5 °C">
+          </div>
+           <div class="col-md-12 mb-3">
+            <label for="exameFisicoDescricao" class="form-label fw-bold">Descrição do Exame Físico</label>
+            <textarea id="exameFisicoDescricao" class="form-control" rows="4" placeholder="Descreva os achados do exame físico (inspeção, palpação, percussão, ausculta)..."></textarea>
+          </div>
+        </div>
+
+        <!-- Hipóteses Diagnósticas -->
+        <h4 class="mt-3">Hipóteses Diagnósticas (HD)</h4>
+        <hr>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <textarea id="hipoteses" class="form-control" rows="3" placeholder="Liste as hipóteses diagnósticas..."></textarea>
+          </div>
+        </div>
+
+        <!-- Conduta -->
+        <h4 class="mt-3">Conduta e Prescrição</h4>
+        <hr>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+             <label for="conduta" class="form-label fw-bold">Exames Solicitados e Conduta</label>
+            <textarea id="conduta" class="form-control" rows="4" placeholder="Descreva os exames solicitados, orientações, encaminhamentos, etc..."></textarea>
+          </div>
+           <div class="col-md-12 mb-3">
+             <label for="prescricao" class="form-label fw-bold">Prescrição Médica</label>
+            <textarea id="prescricao" class="form-control" rows="5" placeholder="1. Medicamento X - 50mg - 1 comprimido via oral a cada 12 horas por 7 dias.&#10;2. Medicamento Y - ..."></textarea>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="card-footer text-end">
+        <button type="button" class="btn btn-secondary me-2"><i class="fas fa-times me-1"></i>Cancelar</button>
+        <button type="button" class="btn btn-info me-2"><i class="fas fa-print me-1"></i>Imprimir Prontuário</button>
+        <button type="submit" class="btn btn-success"><i class="fas fa-save me-1"></i>Salvar Prontuário</button>
+    </div>
+  </div>
+</div>

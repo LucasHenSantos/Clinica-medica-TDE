@@ -20,7 +20,8 @@ import { PacienteListarComponent } from './pages/paciente/paciente-listar/pacien
 import { ConvenioAdicionarComponent } from './pages/convenios/convenio-adicionar/convenio-adicionar.component';
 import { ConvenioListarComponent } from './pages/convenios/convenio-listar/convenio-listar.component';
 import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.component';
-import { PerfilComponent } from './pages/perfil/perfil.component'; // IMPORTAÇÃO DO PerfilComponent
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ProntuarioComponent } from './pages/prontuario/prontuario.component'; // IMPORTAÇÃO DO PerfilComponent
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component'; // IMPORTAÇ�
     ConvenioAdicionarComponent,
     ConvenioListarComponent,
     MenuPrincipalComponent,
-    PerfilComponent // Declarado
+    PerfilComponent,
+    ProntuarioComponent // Declarado
   ],
   imports: [
     BrowserModule,

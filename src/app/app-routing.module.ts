@@ -12,6 +12,7 @@ import { ConvenioAdicionarComponent } from './pages/convenios/convenio-adicionar
 import { ConvenioListarComponent } from './pages/convenios/convenio-listar/convenio-listar.component';
 import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.component';
 import { PerfilComponent } from './pages/perfil/perfil.component'; // IMPORTAÇÃO DO PerfilComponent
+import { ProntuarioComponent } from './pages/prontuario/prontuario.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'convenios/adicionar', component: ConvenioAdicionarComponent },
   { path: 'convenios/listar', component: ConvenioListarComponent },
   { path: 'menu-principal', component: MenuPrincipalComponent },
-  { path: 'perfil', component: PerfilComponent } // Rota para o PerfilComponent
+  { path: 'perfil', component: PerfilComponent }, // Rota para o PerfilComponent
+  { path: 'prontuario', component: ProntuarioComponent }
 ];
 
 @NgModule({
