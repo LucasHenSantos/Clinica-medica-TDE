@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Lista de Funcionários</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="funcionarios.length === 0; else TabelaFuncionarios" class="alert alert-info">
+        Nenhum funcionário cadastrado.
+      </div>
+
+      <ng-template #TabelaFuncionarios>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>CRM</th>
+              <th>Especialidade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let funcionario of funcionarios">
+              <td>{{ funcionario.nome }}</td>
+              <td>{{ funcionario.tipo }}</td>
+              <td>{{ funcionario.crm || 'N/A' }}</td>
+              <td>{{ funcionario.especialidade?.nome || 'N/A' }}</td>
+              <td>
+                <a class="btn btn-sm btn-primary me-2" [routerLink]="['/funcionarios/editar', funcionario.id]">
+                  <i class="fas fa-edit"></i> Editar
+                </a>
+                <button class="btn btn-sm btn-danger" (click)="excluirFuncionario(funcionario.id)">
+                  <i class="fas fa-trash"></i> Excluir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </div>
+    <div class="card-footer">
+        <a routerLink="/funcionario-adicionar" class="btn btn-success">
+            <i class="fas fa-plus"></i> Adicionar Novo Funcionário
+        </a>
+    </div>
+  </div>
+</div>

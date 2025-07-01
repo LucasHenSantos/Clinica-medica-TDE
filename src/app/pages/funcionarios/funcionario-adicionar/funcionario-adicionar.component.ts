@@ -104,11 +104,12 @@ export class FuncionarioAdicionarComponent implements OnInit {
     this.funcionarioService.save(funcionarioParaSalvar).subscribe({
       next: (response) => {
         console.log(response);
-        alert('Funcionário cadastrado com sucesso! Id: ' + response.body.metadata.id);
+        // A resposta do PUT não retorna o ID do objeto individual, mas o do Bin. Usamos o ID que geramos no frontend.
+        alert('Funcionário salvo com sucesso! Id: ' + funcionarioParaSalvar.id);
         form.resetForm(); // Reseta o formulário
         this.limparCampos(); // Limpa o objeto 'funcionario' no frontend para um novo cadastro
       },
-      error: (error) => {
+      error: (error: any) => {
         console.error('Erro ao cadastrar funcionário:', error);
         alert('Erro ao cadastrar funcionário.');
       }
