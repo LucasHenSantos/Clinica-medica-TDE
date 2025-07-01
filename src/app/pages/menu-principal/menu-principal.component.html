@@ -33,11 +33,21 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/convenios/listar">Convênios</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="conveniosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Convênios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="conveniosDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/convenios/listar">Listagem</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/convenios/adicionar">Adicionar Novo</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/convenios/adicionar">Adicionar Convênio</a>
+          <a class="nav-link" routerLink="/perfil">Perfil</a>
         </li>
       </ul>
       <button class="btn btn-outline-light" (click)="sair()">Sair</button>

@@ -1,1 +1,184 @@
-<p>perfil works!</p>
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Cadastro de Perfil de Acesso</h2>
+      <p class="text-muted">Defina as permissões para cada perfil de usuário.</p>
+    </div>
+    <div class="card-body">
+      <form>
+        <!-- Nome do Perfil -->
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="nomePerfil" class="form-label fw-bold">Nome do Perfil</label>
+              <input type="text" id="nomePerfil" class="form-control" placeholder="Ex: Administrador, Recepcionista">
+            </div>
+          </div>
+        </div>
+
+        <!-- Permissões -->
+        <h4>Permissões</h4>
+        <hr>
+
+        <div class="row">
+          <!-- Coluna Funcionários -->
+          <div class="col-md-4 mb-4">
+            <h5>Funcionários</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastrarFuncionario">
+              <label class="form-check-label" for="cadastrarFuncionario">Cadastrar Funcionário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lerFuncionario">
+              <label class="form-check-label" for="lerFuncionario">Visualizar Funcionário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="atualizarFuncionario">
+              <label class="form-check-label" for="atualizarFuncionario">Atualizar Funcionário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="deletarFuncionario">
+              <label class="form-check-label" for="deletarFuncionario">Deletar Funcionário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listarFuncionario">
+              <label class="form-check-label" for="listarFuncionario">Listar Funcionários</label>
+            </div>
+          </div>
+
+          <!-- Coluna Pacientes -->
+          <div class="col-md-4 mb-4">
+            <h5>Pacientes</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastrarPaciente">
+              <label class="form-check-label" for="cadastrarPaciente">Cadastrar Paciente</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lerPaciente">
+              <label class="form-check-label" for="lerPaciente">Visualizar Paciente</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="atualizarPaciente">
+              <label class="form-check-label" for="atualizarPaciente">Atualizar Paciente</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="deletarPaciente">
+              <label class="form-check-label" for="deletarPaciente">Deletar Paciente</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listarPaciente">
+              <label class="form-check-label" for="listarPaciente">Listar Pacientes</label>
+            </div>
+          </div>
+
+          <!-- Coluna Consultas -->
+          <div class="col-md-4 mb-4">
+            <h5>Consultas</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastrarConsulta">
+              <label class="form-check-label" for="cadastrarConsulta">Cadastrar Consulta</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lerConsulta">
+              <label class="form-check-label" for="lerConsulta">Visualizar Consulta</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="atualizarConsulta">
+              <label class="form-check-label" for="atualizarConsulta">Atualizar Consulta</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="deletarConsulta">
+              <label class="form-check-label" for="deletarConsulta">Deletar Consulta</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listarConsulta">
+              <label class="form-check-label" for="listarConsulta">Listar Consultas</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Coluna Especialidades -->
+          <div class="col-md-4 mb-4">
+            <h5>Especialidades</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastrarEspecialidades">
+              <label class="form-check-label" for="cadastrarEspecialidades">Cadastrar Especialidade</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lerEspecialidades">
+              <label class="form-check-label" for="lerEspecialidades">Visualizar Especialidade</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="atualizarEspecialidades">
+              <label class="form-check-label" for="atualizarEspecialidades">Atualizar Especialidade</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="deletarEspecialidades">
+              <label class="form-check-label" for="deletarEspecialidades">Deletar Especialidade</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listarEspecialidades">
+              <label class="form-check-label" for="listarEspecialidades">Listar Especialidades</label>
+            </div>
+          </div>
+
+          <!-- Coluna Convênios -->
+          <div class="col-md-4 mb-4">
+            <h5>Convênios</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastrarConvenio">
+              <label class="form-check-label" for="cadastrarConvenio">Cadastrar Convênio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lerConvenio">
+              <label class="form-check-label" for="lerConvenio">Visualizar Convênio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="atualizarConvenio">
+              <label class="form-check-label" for="atualizarConvenio">Atualizar Convênio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="deletarConvenio">
+              <label class="form-check-label" for="deletarConvenio">Deletar Convênio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listarConvenio">
+              <label class="form-check-label" for="listarConvenio">Listar Convênios</label>
+            </div>
+          </div>
+
+          <!-- Coluna Prontuários -->
+          <div class="col-md-4 mb-4">
+            <h5>Prontuários</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastrarProntuario">
+              <label class="form-check-label" for="cadastrarProntuario">Cadastrar Prontuário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lerProntuario">
+              <label class="form-check-label" for="lerProntuario">Visualizar Prontuário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="atualizarProntuario">
+              <label class="form-check-label" for="atualizarProntuario">Atualizar Prontuário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="deletarProntuario">
+              <label class="form-check-label" for="deletarProntuario">Deletar Prontuário</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listarProntuario">
+              <label class="form-check-label" for="listarProntuario">Listar Prontuários</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="card-footer text-end">
+        <button type="button" class="btn btn-secondary me-2">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar Perfil</button>
+    </div>
+  </div>
+</div>

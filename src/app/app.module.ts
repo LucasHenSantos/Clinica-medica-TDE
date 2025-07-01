@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Módulo para ngModel e ngForm
-import { HttpClientModule } from '@angular/common/http'; // Módulo para requisições HTTP
+import { FormsModule } from '@angular/forms'; // ESSENCIAL para ngModel e ngForm
+import { HttpClientModule } from '@angular/common/http'; // ESSENCIAL para requisições HTTP
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; // Módulo de roteamento principal
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BoasVindaComponent } from './pages/boas-vinda/boas-vinda.component';
@@ -11,19 +11,16 @@ import { CabecalhoComponent } from './pages/cabecalho/cabecalho.component';
 import { RodapeComponent } from './pages/rodape/rodape.component';
 import { EspecialidadeAdicionarComponent } from './pages/especialidades/especialidade-adicionar/especialidade-adicionar.component';
 import { EspecialidadeListarComponent } from './pages/especialidades/especialidade-listar/especialidade-listar.component';
+// IMPORTAÇÃO CORRETA DOS COMPONENTES DE FUNCIONÁRIOS
 import { FuncionarioAdicionarComponent } from './pages/funcionarios/funcionario-adicionar/funcionario-adicionar.component';
-// CORRIGIDO: Importa o FuncionarioListarComponent
 import { FuncionarioListarComponent } from './pages/funcionarios/funcionario-listar/funcionario-listar.component';
+// IMPORTAÇÃO CORRETA DOS COMPONENTES DE PACIENTE (caminho 'pages/paciente')
 import { PacienteAdicionarComponent } from './pages/paciente/paciente-adicionar/paciente-adicionar.component';
 import { PacienteListarComponent } from './pages/paciente/paciente-listar/paciente-listar.component';
 import { ConvenioAdicionarComponent } from './pages/convenios/convenio-adicionar/convenio-adicionar.component';
 import { ConvenioListarComponent } from './pages/convenios/convenio-listar/convenio-listar.component';
-<<<<<<< HEAD
-import { PerfilComponent } from './pages/perfil/perfil.component';
-=======
 import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.component';
-
->>>>>>> master
+import { PerfilComponent } from './pages/perfil/perfil.component'; // IMPORTAÇÃO DO PerfilComponent
 
 @NgModule({
   declarations: [
@@ -34,23 +31,20 @@ import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.co
     RodapeComponent,
     EspecialidadeAdicionarComponent,
     EspecialidadeListarComponent,
-    FuncionarioAdicionarComponent,
-    FuncionarioListarComponent, // DECLARADO AQUI: FuncionarioListarComponent
-    PacienteAdicionarComponent,
-    PacienteListarComponent,
+    FuncionarioAdicionarComponent, // Declarado
+    FuncionarioListarComponent, // Declarado
+    PacienteAdicionarComponent, // Declarado
+    PacienteListarComponent, // Declarado
     ConvenioAdicionarComponent,
     ConvenioListarComponent,
-<<<<<<< HEAD
-    PerfilComponent,
-=======
-    MenuPrincipalComponent
->>>>>>> master
+    MenuPrincipalComponent,
+    PerfilComponent // Declarado
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule, // ESSENCIAL
+    HttpClientModule // ESSENCIAL
   ],
   providers: [],
   bootstrap: [AppComponent]
